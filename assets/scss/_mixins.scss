@@ -1,0 +1,37 @@
+@mixin flexbox($alignItems: stretch, $justifyContent: flex-start) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+
+@mixin linkStyle($textDecor: none, $color: $color-white) {
+  text-decoration: $textDecor;
+  color: $color;
+}
+
+@mixin ulistStyle($flexDirection: row) {
+  list-style-type: none;
+  display: flex;
+  flex-direction: $flexDirection;
+}
+
+@mixin buttonStyle(
+  $paddingTopBottom: 0,
+  $paddingLeftRigth: 0,
+  $borderWidth: 1px,
+  $borderStyle: solid,
+  $borderColor: black,
+  $color: black,
+  $borderRadius: 30px
+) {
+  padding: $paddingTopBottom $paddingLeftRigth;
+  border: $borderWidth $borderStyle $borderColor;
+  color: $color;
+  border-radius: $borderRadius;
+}
+
+@mixin underTabletOnly() {
+  @media only screen and (max-width: 900px) {
+    @content;
+  }
+}
